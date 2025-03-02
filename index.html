@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Filhinha</title>
-    <link rel="icon" type="image/png" href='https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/Favicon.png'>
+    <title>Irmãzinha</title>
+    <link rel="icon" type="image/png" href='https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/Favicon.png'>
     <style>
         body {
             background-color: #0f0f0f;
@@ -74,85 +74,85 @@
 </head>
 <body>
    <div class="content-container">
-        <img id="randomImage" src="" alt="A random photo of Filhinha">
+        <img id="randomImage" src="" alt="A random photo of Irmãzinha">
         <button id="catEffectBtn" class="fun-button">?</button>
     </div>
     <div class="last-updated">Last updated: <span id="lastUpdated"></span></div>
 
     <!-- This will be your transparent animation cat that's not shown until triggered -->
-    <img id="animationCat" class="animation-cat" src="https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/Favicon.png" alt="Animation Filhinha">
+    <img id="animationCat" class="animation-cat" src="https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/Favicon.png" alt="Animation Irmãzinha">
     <script>
         // TESTING MODE: Uncomment the line below and set the number (1-10) to test a specific animation
         // const TEST_ANIMATION = 10; // <-- Change this number to test different animations
         
         // List of images
         const images = [
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_1_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_1_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_2_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_2_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_3_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_3_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_4_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_4_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_5_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_5_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_6_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_6_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_7_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_7_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_8_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_8_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_9_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_9_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_10_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_10_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_11_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_11_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_12_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_12_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_13_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_13_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_14_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_14_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_15_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_15_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_16_2025-03-02_17-35-07.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_16_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_17_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_18_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_19_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_21_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_22_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_23_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_24_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_26_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_27_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_28_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_29_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_30_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_31_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_32_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_33_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_34_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_35_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_36_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_37_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_38_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_39_2025-03-02_17-37-307.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_40_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_41_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_42_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_43_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_44_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_45_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_46_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_47_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_48_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_49_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_50_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_51_2025-03-02_17-37-30.jpg',
-            'https://raw.githubusercontent.com/ailaghast/Filhinha/main/Images/photo_28_2025-03-02_14-53-37.jpg'
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_1_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_1_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_2_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_2_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_3_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_3_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_4_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_4_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_5_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_5_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_6_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_6_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_7_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_7_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_8_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_8_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_9_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_9_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_10_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_10_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_11_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_11_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_12_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_12_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_13_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_13_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_14_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_14_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_15_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_15_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_16_2025-03-02_17-35-07.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_16_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_17_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_18_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_19_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_21_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_22_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_23_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_24_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_26_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_27_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_28_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_29_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_30_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_31_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_32_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_33_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_34_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_35_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_36_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_37_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_38_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_39_2025-03-02_17-37-307.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_40_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_41_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_42_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_43_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_44_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_45_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_46_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_47_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_48_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_49_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_50_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_51_2025-03-02_17-37-30.jpg',
+            'https://raw.githubusercontent.com/ailaghast/Irmazinha/main/Images/photo_28_2025-03-02_14-53-37.jpg'
         ];
 
         // Function to select a random image
